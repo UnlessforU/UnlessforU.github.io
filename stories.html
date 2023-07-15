@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Our Story</title>
+    <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+<p><a href="index.html">返回</a></p>
+<div class="button-container">
+    <button onclick="toggleText('text1')" class="toggle-button">2017.10.22</button>
+    <div id="text1" class="text-content hidden">
+        <p>这是成为QQ好友的第一天。</p>
+        <p>那时是我初三的暑假，也是她六年级的暑假。当时打王者时常会带上她。她给我的第一印象就是声音特别温柔。</p>
+    </div>
+</div>
+<br>
+<div class="button-container">
+    <button class="toggle-button" onclick="toggleText('text2')">2023.7.9</button>
+    <div id="text2" class="text-content hidden">
+        <p>这是我们的第一次见面。</p>
+        <p>我尽可能早地赶到淡水的好宜多商场，但是还是她先到了。好在我没有迟到，十一点半准时到达并在三楼的人群中找到了她，一分不差。
+            刚见面时难免有点生分，还不知道说什么，也没怎么问好，就只是问吃什么呀。</p>
+        <p>我们找了一家最近的自助店，吃了个饱。在吃饭的时候似乎跟她熟悉了一些，没有那么尴尬了。</p>
+        <p>接着我们计划来到亚公顶。我才发现这姑娘居然轻装上阵，只有一部手机在身上。好在我聪明带了一把伞，同在一把伞下让我们的距离更近了些。我们俩体力很差，大抵一百个台阶就得歇个几分钟。</p>
+        <p>一路上我们有说有笑，她的声音给我的感觉是那么熟悉，仿佛这些年从未改变过，还是这么柔软。</p>
+        <p>到山腰上我们在一个大石头上歇息，外边儿就是一个悬崖，她随口说了一句：“坐进来我保护你”。嗯？我又惊讶又开心。</p>
+        <p>到了山顶，我们在亭子里歇了会吹吹热风。我问她是否合照呢？她不许，她说不好看。天哪，你不好看谁好看？既然如此，也便只好拍拍山上的风景作罢。</p>
+        <p>下山的路又两条，这家伙胆子可大，选择没有人同行那一条。那条路像野路，怪可怕的。不过有她在，好像什么都不怕了。</p>
+        <p>好不容易下了山，我随她去了她生活的那片地方。我们一起看了场电影，那场电影给我的印象有三：令人感动的剧情，情侣座位，以及她不绝于耳的呵欠声。</p>
+        <p>这就是我们的第一次相遇，平凡且美好。</p>
+    </div>
+</div>
+<br>
+
+
+<script>
+    function toggleText(textId) {
+        var text = document.getElementById(textId);
+
+        // 显示/隐藏文字内容
+        if (text.classList.contains('hidden')) {
+            text.classList.remove('hidden');
+        } else {
+            text.classList.add('hidden');
+        }
+
+        // 隐藏其他文字内容
+        var texts = document.getElementsByTagName('div');
+        for (var i = 0; i < texts.length; i++) {
+            var otherTextId = texts[i].getAttribute('id');
+            if (otherTextId !== textId) {
+                var otherText = document.getElementById(otherTextId);
+                if (!otherText.classList.contains('hidden')) {
+                    otherText.classList.add('hidden');
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
